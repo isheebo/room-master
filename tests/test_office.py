@@ -1,6 +1,7 @@
 import unittest
 from app.office import Office
 from app.staff import Staff
+from app.fellow import Fellow
 
 
 class OfficeTest(unittest.TestCase):
@@ -11,8 +12,9 @@ class OfficeTest(unittest.TestCase):
     def test_office_has_max_capacity_six(self):
         self.assertEqual(self.office.capacity, 6)
 
-    def test_office_name(self):
+    def test_office_properties(self):
         self.assertEqual(self.office.name, 'Blue')
+        self.assertEqual(self.office.type, 'Office')
 
     def test_no_members_yet(self):
         self.assertEqual(len(self.office.members), 0)
@@ -28,12 +30,17 @@ class OfficeTest(unittest.TestCase):
         self.assertEqual(self.office.available_spaces(), 5)
 
     def test_office_can_fill_up(self):
-        self.office.add_person(Staff('Irene'))
-        self.office.add_person(Staff('Annie'))
-        self.office.add_person(Staff('George'))
-        self.office.add_person(Staff('Irene'))
-        self.office.add_person(Staff('Annie'))
-        self.office.add_person(Staff('George'))
-        self.office.add_person(Staff('George'))
+        self.office.add_person(Staff('Atukwase Sylvestre'))
+        self.office.add_person(Staff('Murungi Patricia'))
+        self.office.add_person(Fellow('Patience Mukami', True))
+        self.office.add_person(Staff('Irene Mulyagonja'))
+        self.office.add_person(Staff('Annie Myles'))
+        self.office.add_person(Staff('John Katureebe'))
+        self.office.add_person(Staff('George Williams'))
+
         self.assertEqual(len(self.office.members), 6)
         self.assertTrue(self.office.is_full())
+
+    def test_add_person_in_available_room(self):
+        response = self.office.add_person(Fellow('Kadongo Moses'))
+        self.assertTrue(response)

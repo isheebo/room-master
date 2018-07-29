@@ -25,7 +25,7 @@ class Room:
         """
         adds a person to a room that is not yet filled up
         """
-        person.type == 'Fellow' and self._add_fellow(
+        return person.type == 'Fellow' and self._add_fellow(
             person) or person.type == 'Staff' and self._add_staff(person)
 
     def _add_fellow(self, fellow):
