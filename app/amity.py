@@ -3,6 +3,12 @@ from app.fellow import Fellow
 from app.staff import Staff
 
 
+"""
+You need to find a way to display messages  when forexample a room has been
+allocated successfully or when the process fails.
+"""
+
+
 class Amity:
     def __init__(self):
         self.employees = []
