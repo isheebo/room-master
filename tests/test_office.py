@@ -1,7 +1,8 @@
 import unittest
+
+from app.fellow import Fellow
 from app.office import Office
 from app.staff import Staff
-from app.fellow import Fellow
 
 
 class OfficeTest(unittest.TestCase):

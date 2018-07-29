@@ -11,3 +11,9 @@ class LivingSpace(Room):
         Since staff cannot be allocated livingspaces
         """
         return False
+
+    def _add_fellow(self, fellow):
+        if not self.is_full() and fellow.wants_accommodation:
+            self.members.append(fellow)
+            return True
+        return False
