@@ -27,3 +27,8 @@ A command line interface using `docopt` that has the following commands :-
 - `load_people` - Adds people to rooms from a txt file.
 - `save_state [--db=sqlite_database]` - Persists all the data stored in the app to a SQLite database. Specifying the --db parameter explicitly stores the data in the sqlite_database specified.
 - `load_state <sqlite_database>` - Loads data from a database into the application.
+
+## Running the tests
+```
+python -m unittest
+```
