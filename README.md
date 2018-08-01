@@ -11,7 +11,7 @@ The system has the following constraints
 - A living space can accommodate a maximum of 4 people.
 - A person to be allocated can either be a fellow or staff.
 - Staff cannot be allocated living spaces.
-- Since Living spaces are optional for fellows, they can to get one or not
+- Since Living spaces are optional for fellows, they can get one or not
 - The system to be designed should allocate spaces to people randomly and automatically.
 
 **Expected Functionality**
@@ -27,3 +27,8 @@ A command line interface using `docopt` that has the following commands :-
 - `load_people` - Adds people to rooms from a txt file.
 - `save_state [--db=sqlite_database]` - Persists all the data stored in the app to a SQLite database. Specifying the --db parameter explicitly stores the data in the sqlite_database specified.
 - `load_state <sqlite_database>` - Loads data from a database into the application.
+
+## Running the tests
+```
+python -m unittest
+```
